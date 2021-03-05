@@ -14,7 +14,7 @@ def index():
         searchString = request.form['content'].replace(" ","") # obtaining the search string entered in the form
         try:
             reviews = db.getDataFromMongo(searchString) # searching the collection with the name same as the keyword
-            if reviews.count() > 50: # if there is a collection with searched keyword and it has records in it
+            if reviews.count() >= 10: # if there is a collection with searched keyword and it has records in it
                 return render_template('results.html',reviews=reviews) # show the results to user
             else:
                 data=flipkart.getDataFromFlipKart(searchString)

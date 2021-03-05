@@ -20,7 +20,7 @@ def getDataFromFlipKart(searchString):
         end_page=end_page.replace(",","")
         print(end_page)
         for ind in range(int(end_page)):
-            if(len(data)<55):
+            if(len(data)<11):
                 appendedUrl="&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&page="
                 bigboxes=bigboxes
                 if(ind!=0):
