@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Reviews</div>
+
+   <table cellspacing="0">
+      <tr>
+         <th>Name</th>
+         <th>Price</th>
+         <th>Original Price</th>
+         <th>Discount</th>
+          <th>Available Offer</th>
+          <th>Specifications</th>
+      </tr>
+         {% for review in reviews %}
+      <tr>
+          <td>{{review['name']}}</td>
+         <td>{{review['price']}}</td>
+          <td>{{review['discount']}}</td>
+         <td>{{review['original_price']}}</td>
+         <td>{{review['available_offer']}}</td>
+         <td>{{review['specifications']}} </td>
+       {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
